@@ -9,7 +9,8 @@ class Menu:
   def calculate_bill(self, purchased_items):
     total_bill = 0
     for i in purchased_items:
-      total_bill += self.items[i]
+      if i in self.items:
+        total_bill += self.items[i]
     return total_bill
 
 brunch = Menu('Brunch', {
@@ -61,4 +62,4 @@ class Business():
     self.franchises = franchises
 
 first_buisness = Business("Basta Fazoolin' with my Heart", [flagship_store, new_installment])
-second_business = Business("Take a' Arepa", arepas_place)
+second_business = Business("Take a' Arepa", [arepas_place])
