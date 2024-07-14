@@ -54,12 +54,13 @@ flagship_store = Franchise("1232 West End Road", [brunch, early_bird, dinner, ki
 new_installment = Franchise("12 East Mulberry Street", [brunch, early_bird, dinner, kids])
 
 print(flagship_store.available_menus(17))
-arepas_place = Franchise("189 Fitzgerald Avenue", arepas_menu)
+arepas_place = Franchise("189 Fitzgerald Avenue", [arepas_menu])
 
 class Business():
   def __init__(self, name, franchises):
     self.name = name
     self.franchises = franchises
 
-first_buisness = Business("Basta Fazoolin' with my Heart", [flagship_store, new_installment])
+first_business = Business("Basta Fazoolin' with my Heart", [flagship_store, new_installment])
 second_business = Business("Take a' Arepa", [arepas_place])
+print(second_business.franchises[0].menus[0])
